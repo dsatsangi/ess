@@ -3,18 +3,19 @@ const IS_DEV = process.env.APP_VARIANT === 'development';
 
 export default {
   "expo": {
-    "name": "changemakers-rn",
-    "slug": "changemakers-rn",
+    "name": "genisup-ess",
+    "slug": "ess",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "owner": "sdheeraz",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "scheme": "io.frappe.changemakers",
+    "scheme": "com.genisup.ess",
     "assetBundlePatterns": [
       "**/*"
     ],
@@ -23,21 +24,21 @@ export default {
       "config": {
         "usesNonExemptEncryption": false
       },
-      "bundleIdentifier": IS_DEV ? 'io.changemakers.dev' : 'io.frappe.changemakers',
+      "bundleIdentifier": IS_DEV ? 'com.genisup.ess.dev' : 'com.genisup.ess',
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "io.frappe.changemakers"
+      "package": "com.genisup.ess"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "8fdd6952-bd1f-4c65-90fb-3a696ad52c97"
+        "projectId": "e8365ed6-93ae-4d3b-9d53-c53bca372f73"
       }
     },
     "plugins": [
