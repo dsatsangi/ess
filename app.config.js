@@ -24,7 +24,7 @@ export default {
       "config": {
         "usesNonExemptEncryption": false
       },
-      "bundleIdentifier": IS_DEV ? 'com.genisup.ess.dev' : 'com.genisup.ess',
+      "bundleIdentifier": IS_DEV ? 'exp://192.168.1.19:8081/--/auth' : 'exp://192.168.1.19:8081/--/auth',
     },
     "android": {
       "adaptiveIcon": {
