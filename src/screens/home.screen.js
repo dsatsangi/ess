@@ -1,14 +1,7 @@
 import React, { useContext } from "react";
 import { SafeAreaView, StyleSheet, ScrollView, TouchableOpacity, View } from "react-native";
-import { Layout, Text, Icon, Divider, TopNavigation, TopNavigationAction } from "@ui-kitten/components";
+import { Layout, Text, Icon, Divider } from "@ui-kitten/components";
 import { AuthContext } from "../provider/auth";
-
-const BellIcon = (props) => <Icon {...props} name='bell-outline'/>;
-const HomeIcon = (props) => <Icon {...props} name='home-outline'/>;
-const PersonIcon = (props) => <Icon {...props} name='person-outline'/>;
-const CalendarIcon = (props) => <Icon {...props} name='calendar-outline'/>;
-const CreditCardIcon = (props) => <Icon {...props} name='credit-card-outline'/>;
-const BankIcon = (props) => <Icon {...props} name='file-text-outline'/>;
 
 const QuickLinkItem = ({ icon, title, onPress }) => (
   <TouchableOpacity style={styles.quickLink} onPress={onPress}>
@@ -29,19 +22,8 @@ export const HomeScreen = () => {
     { title: 'View Salary Slips', icon: 'file' },
   ];
 
-  const renderRightActions = () => (
-    <React.Fragment>
-      <TopNavigationAction icon={BellIcon}/>
-    </React.Fragment>
-  );
-
   return (
     <SafeAreaView style={styles.container}>
-      <TopNavigation
-        title="Frappe HR"
-        alignment="center"
-        accessoryRight={renderRightActions}
-      />
       <ScrollView>
         <Layout style={styles.header}>
           <Text category="h4" style={styles.greeting}>
@@ -80,29 +62,6 @@ export const HomeScreen = () => {
           </TouchableOpacity>
         </View>
       </ScrollView>
-
-      <View style={styles.footer}>
-        <TouchableOpacity style={styles.footerItem}>
-          <HomeIcon style={styles.footerIcon} fill="#000"/>
-          <Text category="c1">Home</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.footerItem}>
-          <PersonIcon style={styles.footerIcon} fill="#8F9BB3"/>
-          <Text category="c1" appearance="hint">Attendance</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.footerItem}>
-          <CalendarIcon style={styles.footerIcon} fill="#8F9BB3"/>
-          <Text category="c1" appearance="hint">Leaves</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.footerItem}>
-          <CreditCardIcon style={styles.footerIcon} fill="#8F9BB3"/>
-          <Text category="c1" appearance="hint">Expenses</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.footerItem}>
-          <BankIcon style={styles.footerIcon} fill="#8F9BB3"/>
-          <Text category="c1" appearance="hint">Salary</Text>
-        </TouchableOpacity>
-      </View>
     </SafeAreaView>
   );
 };
@@ -168,22 +127,5 @@ const styles = StyleSheet.create({
   activeTab: {
     borderBottomWidth: 2,
     borderBottomColor: '#000',
-  },
-  footer: {
-    flexDirection: 'row',
-    backgroundColor: 'white',
-    paddingVertical: 10,
-    borderTopWidth: 1,
-    borderTopColor: '#f0f0f0',
-  },
-  footerItem: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  footerIcon: {
-    width: 24,
-    height: 24,
-    marginBottom: 4,
-  },
+  }
 });
